@@ -1,0 +1,19 @@
+
+
+
+    <nav>
+        
+
+        
+        <%if(!CurrentUser){%>
+            <a href="/register">Register</a>
+            <a href="/login">Login</a>
+            <%}%>
+        <%if(CurrentUser){%>
+            <a href="/logout">Logout</a>
+            <%}%>
+
+
+            <a href="/notes">All Notes</a>
+       
+    </nav>

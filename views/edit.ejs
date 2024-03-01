@@ -1,0 +1,61 @@
+<%- layout("layout/boilerplate")   %>
+
+
+<h1>Edit the note</h1>
+
+
+<div class="row">
+
+
+    <div class="col-8 offset-2">
+        
+
+        <form  method="POST" action="/notes/<%=data._id%>/edit?_method=PUT"  class="needs-validation" novalidate>
+
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Title :</label>
+                <input type="text" name="title" id="title" class="form-control"  value="<%=data.title%>" required>
+                <div class="invalid-feedback">Enter a valid title</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description :</label>
+                <textarea name="description" id="description" cols="30" rows="7" class="form-control"   id="description"  required><%=data.description%></textarea>
+                <div class="invalid-feedback">Enter valid description</div>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="Topic" class="form-label">topic</label>
+                <input type="text" name="Topic" id="Topic" class="form-control" value="<%=data.Topic%>" required>
+                <div class="invalid-feedback">Enter Topic</div>
+
+            </div>
+
+            <div>
+                <button class="btn btn-dark mt-3 addbtn mr-5 justify-content-center">Add</button>
+            </div>
+
+
+
+
+
+
+            </div>
+
+
+           
+           
+           
+
+
+        </form>
+
+
+    </div>
+
+
+
+
+</div>

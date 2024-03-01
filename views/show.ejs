@@ -1,0 +1,56 @@
+<%- layout("layout/boilerplate")   %>
+
+
+
+<h1>Show Page</h1>
+
+
+
+
+<div class="row mt-5">
+
+    <div class="col-lg-8 col-md-8 col-sm-12 offset-lg-2 offset-md-2">
+        <div class="card">
+            
+            <div class="card-body">
+
+                <ul>
+                    <h6><%=data.title%></h6>
+                    <p><%=data.description%></p>
+                    <p><%=data.topic%></p>
+
+
+                    <%
+                    let d = data.CreatedAt.toString();
+                    let StrArr=d.split(' ');
+                    let Dt=StrArr.slice(0,3).join(" ");
+
+                %>
+                
+                <p><%=Dt%></p>
+
+                   
+                <form action="/notes/<%=data._id%>/edit" method="GET">
+                    <button class=" btn btn-dark">Edit</button>
+                </form>
+
+                <br>
+                <br>
+                <br>
+
+                <form action="/notes/<%=data._id%>/delete?_method=DELETE" method="POST">
+                    <button class=" btn btn-dark">Delete</button>
+                </form>
+                </ul>
+
+            </div>
+               
+               
+            </div>
+        </div>
+    </div>
+
+
+
+
+    

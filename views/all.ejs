@@ -1,0 +1,45 @@
+<%- layout("layout/boilerplate")   %>
+
+<h1>All Notes Here</h1>
+
+
+<%if(CurrentUser){%>
+    <h1>Welcome <%=CurrentUser.username%></h1>
+<%}%>
+
+
+
+<%if(data.length){%>
+    <h1><%=data[0].owner.totalNotes%></h1>
+<%}%>
+    <a href="/notes/new">
+    <button class=" btn btn-primary  btn-sm ">New Note</button>
+   </a>
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-4">
+
+        
+       
+
+        <%for(let i=0;i<data.length;i++){%>
+    
+            
+    
+            
+            <div class="card col  m-2">
+                
+                    <h6><%=data[i].title%></h6>
+                     <p><%=data[i].description%></p>
+                     
+
+                     
+                    <a href="/notes/<%=data[i]._id%>">Show Note</a>
+                
+            </div>
+              
+    
+
+         
+        
+        <%}%>
+    
+    </div>
